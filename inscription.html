@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        function validForm() {
+            login=document.getElementById("login").value;
+            password=document.getElementById("password").value;
+            flag=true;
+            if(login==""){
+                errLogin=document.getElementById("errorLogin");
+                errLogin.innerHTML="Veuillez saisir votre login";
+                flag=false;
+            }
+            if(password=="")
+                errLogin=document.getElementById("errorPassword");
+                errLogin.innerHTML="Veuillez saisir votre password";
+                flag=false;
+            return flag;
+        }   
+    </script>
+</head>
+<body>
+    <header class="tete" style="background-image: url(./images/banner.jpg) ;">
+    <h1>Mon site web</h1></header>
+    <div id="page">
+        <section class="contenu ">
+            <h2>Inscription !</h2>
+            <h3 class="cadre_question">Mon compte :</h3>
+            <p class="cadre_reponse">
+                <input class="input_co" type="email" id="email" name="email" placeholder="Login">
+                <input class="input_co" type="password" id="password" name="password" placeholder="Mot de passe">
+                <input class="input_co" type="password" id="password" name="password" placeholder="Répéter le Mot de passe">
+                <input class="input_co" type="mail" id="mail" name="mail" placeholder="Mail">
+            </p>
+            <h3 class="cadre_question">Mes Informations :</h3>
+            <p class="cadre_reponse">
+                <input class="input_co" type="Nom" id="Nom" name="Nom" placeholder="Nom">
+                <input class="input_co" type="Prenom" id="Prenom" name="Prenom" placeholder="Prenom">
+                <input class="input_co" type="Age" id="Age" name="Age" placeholder="Age">
+            </p>
+            <p class="cadre_reponse"><button class="submit" type="submit">connexion</button></p>
+        </section>
+        <div id="droit" class="droit">
+            <nav class="menu">
+                <h3>Menu</h3>
+                <ul class="bloc_menu">
+                    <li><a href="index.html"> Accueil </a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+            <aside class="side">
+                <h2 style="text-align: center;">Connexion</h2>
+                <ul class="side" style="text-align: center;" >
+                    <li><form name="connexion" method="post" action="Info.php" onsubmit="return validForm();">
+                        <input class="input_co" type="texte " id="login" name="login" placeholder="Login">
+                        <div id="errorLogin" class="error"></div>
+                        <br><input class="input_co" type="password" id="password" name="mot-de_passe" placeholder="Mot de passe"><br/>
+                        <br/>
+                        <div id="errorPassword"></div>
+                        <input class="submit" type="submit" value="connexion">
+                    </form>
+                      <br>
+                    <a href="#" class="mp_oublier">Informations de compte oubliées ?</a></li>
+                </ul>
+            </aside>
+            <aside class="side">
+                <h3>Mes liens</h3>
+                <ul class="bloc_lien">
+                    <li><a href="facebook.com">Mon facebook</a></li>
+                    <li><a href="twitter.com">Mon twitter</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+    <footer class="pied">
+        <h3 class="copyright">@2018 | Mon site web</h3>
+    </footer>
+</body>
+</html>
